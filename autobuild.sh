@@ -2,8 +2,12 @@
 
 set -x
 
-rm -rf ${pwd}/build/*
+mkdir -p build
+mkdir -p bin
 
-cd ${pwd}/build &&
+rm -rf build/*
+rm -rf bin/*
+
+cd  build &&
     cmake .. &&
     make
