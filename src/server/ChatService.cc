@@ -335,7 +335,7 @@ void ChatService::loginout(const TcpConnectionPtr& conn,json& js,Timestamp time)
     userModel_.updateState(user);
 }
 
-//从redis消息队列中获取订阅的消息
+//将从redis消息队列中获取订阅的消息发送给对应的用户
 void ChatService::handleRedisSubscribeMessage(int userid,string msg)
 {
     lock_guard<mutex> lock(connMutex_);
